@@ -11,7 +11,13 @@ function createBox(cellnumber){
         box.innerHTML= i
         box.classList.add("box")
         board.append(box)
+        if (cellnumber===81) {
+            box.classList.replace("box","box_normal");
+        }else if (cellnumber===49) {
+            box.classList.replace("box","box_easy");
+        }
     }
+   
 }
 
 /* MAIN SCRIPT */
@@ -22,10 +28,8 @@ start.addEventListener("click", function(){
         createBox(100)
     }else if(difficultyChoice==="normal"){
         createBox(81)
-        box.classList.replace("box","box_normal");
     }else if(difficultyChoice==="easy"){
         createBox(49)
-        box.classList.replace("box","box_easy");
     }
 });  
 
