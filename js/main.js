@@ -16,6 +16,10 @@ function createBox(cellnumber){
         }else if (cellnumber===49) {
             box.classList.replace("box","box_easy");
         }
+        box.addEventListener("click", function(){
+            box.style.backgroundColor="lightblue"
+            alert(i)
+        })
     }
    
 }
@@ -24,6 +28,7 @@ function createBox(cellnumber){
 start.addEventListener("click", function(){
     const difficultyChoice= document.getElementById("difChoice").value
     document.querySelector("#start").disabled = true;
+    //controllo della difficoltà
     if (difficultyChoice==="hard") {
         createBox(100)
     }else if(difficultyChoice==="normal"){
